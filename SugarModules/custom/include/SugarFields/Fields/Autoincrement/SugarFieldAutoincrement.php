@@ -130,7 +130,7 @@ class SugarFieldAutoincrement extends SugarFieldBase {
 			 */
 			$db =  DBManagerFactory::getInstance();
 			$query = "select " . $field . " from " . $table_name .
-					 " where (" . $field . " <> '' or " . $field . " is not null) order by right(" . $field. ", 4) desc limit 1";
+					 " where (" . $field . " <> '' or " . $field . " is not null) order by right(" . $field. ", 11) desc limit 1";
 			try {
 				$result = $db->query($query, true, 'Error selecting most recent ' . $field . ' autoincrement value');
 				if ($row=$db->fetchByAssoc($result)) {
